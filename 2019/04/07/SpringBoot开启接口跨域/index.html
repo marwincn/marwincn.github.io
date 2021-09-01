@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Spring Boot + Spring Security 应用开启接口跨域 | Marwin&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.为何要提供跨域资源服务最近在写的一个项目后端使用了springboot和springsecurity，前端使用Vue和axios（发送ajax）。为了实现前后端分离，后端要开启CORS（跨站资源共享），保证后端能对不同站点下的前端提供服务。  由于浏览器的同源策略，跨域请求一般会被拒绝，导致ajax无法访问到后端资源。跨域的几种场景，可以判断自己的网站是否跨域：    域名不同 域名相同，端口">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Boot + Spring Security 应用开启接口跨域">
+<meta property="og:url" content="https://marwincn.github.io/blog/2019/04/07/SpringBoot%E5%BC%80%E5%90%AF%E6%8E%A5%E5%8F%A3%E8%B7%A8%E5%9F%9F/">
+<meta property="og:site_name" content="Marwin&#39;s Blog">
+<meta property="og:description" content="1.为何要提供跨域资源服务最近在写的一个项目后端使用了springboot和springsecurity，前端使用Vue和axios（发送ajax）。为了实现前后端分离，后端要开启CORS（跨站资源共享），保证后端能对不同站点下的前端提供服务。  由于浏览器的同源策略，跨域请求一般会被拒绝，导致ajax无法访问到后端资源。跨域的几种场景，可以判断自己的网站是否跨域：    域名不同 域名相同，端口">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-04-07T03:19:33.000Z">
+<meta property="article:modified_time" content="2021-09-01T14:52:47.978Z">
+<meta property="article:author" content="marwin">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Marwin&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/blog/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3J7K7R3M4C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3J7K7R3M4C');
+  </script>
+  <!-- 百度统计 -->
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1eaccf6b159862b1bf42b8a5989d904d";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Marwin&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://github.com/marwincn">Github</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://marwincn.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-SpringBoot开启接口跨域" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/04/07/SpringBoot%E5%BC%80%E5%90%AF%E6%8E%A5%E5%8F%A3%E8%B7%A8%E5%9F%9F/" class="article-date">
+  <time datetime="2019-04-07T03:19:33.000Z" itemprop="datePublished">2019-04-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Spring Boot + Spring Security 应用开启接口跨域
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-为何要提供跨域资源服务"><a href="#1-为何要提供跨域资源服务" class="headerlink" title="1.为何要提供跨域资源服务"></a>1.为何要提供跨域资源服务</h2><p>最近在写的一个项目后端使用了springboot和springsecurity，前端使用Vue和axios（发送ajax）。为了实现前后端分离，后端要开启<code>CORS（跨站资源共享）</code>，保证后端能对不同站点下的前端提供服务。</p>
+<blockquote>
+<p>由于浏览器的同源策略，跨域请求一般会被拒绝，导致ajax无法访问到后端资源。<br>跨域的几种场景，可以判断自己的网站是否跨域：  </p>
+<ol>
+<li>域名不同</li>
+<li>域名相同，端口不同</li>
+<li>域名相同，协议不同，如http和https  </li>
+</ol>
+</blockquote>
+<span id="more"></span> 
+<p>了解了为什么要开启CORS后可以开始编写开启CORS的代码了。</p>
+<h2 id="2-Spring-Boot配置里开启CORS"><a href="#2-Spring-Boot配置里开启CORS" class="headerlink" title="2.Spring Boot配置里开启CORS"></a>2.Spring Boot配置里开启CORS</h2><p>springboot开启CORS只需在配置里添加CORS的支持，直接编写配置类即可：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.cors.CorsConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.cors.UrlBasedCorsConfigurationSource;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.filter.CorsFilter;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CorsConfig</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> CorsConfiguration <span class="title">buildConfig</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        CorsConfiguration corsConfiguration = <span class="keyword">new</span> CorsConfiguration();</span><br><span class="line">        corsConfiguration.addAllowedOrigin(<span class="string">&quot;*&quot;</span>); <span class="comment">// 允许的域名</span></span><br><span class="line">        corsConfiguration.addAllowedHeader(<span class="string">&quot;*&quot;</span>); <span class="comment">// 允许的请求头</span></span><br><span class="line">        corsConfiguration.addAllowedMethod(<span class="string">&quot;*&quot;</span>); <span class="comment">// 允许的方法（post、get等）</span></span><br><span class="line">        <span class="keyword">return</span> corsConfiguration;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CorsFilter <span class="title">corsFilter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        UrlBasedCorsConfigurationSource source = <span class="keyword">new</span> UrlBasedCorsConfigurationSource();</span><br><span class="line">        source.registerCorsConfiguration(<span class="string">&quot;/**&quot;</span>, buildConfig()); <span class="comment">// 对接口配置跨域设置</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> CorsFilter(source);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-Spring-Security配置"><a href="#3-Spring-Security配置" class="headerlink" title="3.Spring Security配置"></a>3.Spring Security配置</h2><p>由于使用Spring Security后请求都会被它拦截，需要对security也进行配置：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableWebSecurity</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebSecurityConfig</span> <span class="keyword">extends</span> <span class="title">WebSecurityConfigurerAdapter</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(HttpSecurity http)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        http.authorizeRequests()</span><br><span class="line">                <span class="comment">// 如果有允许匿名的url，填在下面</span></span><br><span class="line">                .anyRequest()</span><br><span class="line">                .permitAll()</span><br><span class="line">                .and()</span><br><span class="line">                .formLogin()</span><br><span class="line">                .loginProcessingUrl(<span class="string">&quot;/user/login&quot;</span>)</span><br><span class="line">                <span class="comment">// 自定义处理器，对ajax请求响应json数据</span></span><br><span class="line">                .successHandler(<span class="keyword">new</span> AuthenticationSuccessHandler() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAuthenticationSuccess</span><span class="params">(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">                        httpServletResponse.setContentType(<span class="string">&quot;application/json;charset=utf-8&quot;</span>);</span><br><span class="line">                        PrintWriter out = httpServletResponse.getWriter();</span><br><span class="line">                        <span class="comment">// 将结果转换成Json数据，Result是自己编写的结果类</span></span><br><span class="line">                        JSONObject result = JSONObject.fromObject(<span class="keyword">new</span> Result(Result.SUCCESS, <span class="string">&quot;登录成功！&quot;</span>));</span><br><span class="line">                        out.write(result.toString());</span><br><span class="line">                        out.flush();</span><br><span class="line">                        out.close();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">                <span class="comment">// 自定义处理器，对ajax请求响应json数据</span></span><br><span class="line">                .failureHandler(<span class="keyword">new</span> AuthenticationFailureHandler() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAuthenticationFailure</span><span class="params">(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">                        httpServletResponse.setContentType(<span class="string">&quot;application/json;charset=utf-8&quot;</span>);</span><br><span class="line">                        PrintWriter out = httpServletResponse.getWriter();</span><br><span class="line">                        <span class="comment">// 将结果转换成Json数据，Result是自己编写的结果类</span></span><br><span class="line">                        JSONObject result = JSONObject.fromObject(<span class="keyword">new</span> Result(Result.ERROR, <span class="string">&quot;登录失败！&quot;</span>));</span><br><span class="line">                        out.write(result.toString());</span><br><span class="line">                        out.flush();</span><br><span class="line">                        out.close();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">                .usernameParameter(<span class="string">&quot;username&quot;</span>)</span><br><span class="line">                .passwordParameter(<span class="string">&quot;password&quot;</span>)</span><br><span class="line">                .permitAll()</span><br><span class="line">                .and()</span><br><span class="line">                .logout()</span><br><span class="line">                .logoutUrl(<span class="string">&quot;/logout&quot;</span>)</span><br><span class="line">                .permitAll();</span><br><span class="line">        <span class="comment">// 开启CORS，关闭CSRF跨域</span></span><br><span class="line">        http.cors().and().csrf().disable();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(WebSecurity web)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 设置拦截忽略文件夹，可以对静态资源放行</span></span><br><span class="line">        web.ignoring().antMatchers(<span class="string">&quot;/css/**&quot;</span>, <span class="string">&quot;/js/**&quot;</span>, <span class="string">&quot;/js/**&quot;</span>, <span class="string">&quot;/lib/**&quot;</span>, <span class="string">&quot;/upload/**&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里有两个坑。</p>
+<h2 id="3-1设置CORS和CSRF"><a href="#3-1设置CORS和CSRF" class="headerlink" title="3.1设置CORS和CSRF"></a>3.1设置CORS和CSRF</h2><p>一是，下面这一句必须要设置，否则请求会直接403 Forbidden</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http.cors().and().csrf().disable();</span><br></pre></td></tr></table></figure>
+<h2 id="3-2自定义登录处理器"><a href="#3-2自定义登录处理器" class="headerlink" title="3.2自定义登录处理器"></a>3.2自定义登录处理器</h2><p>二是，SpringSecurity通常配置有<code>http.formLogin().successForwardUrl().failureForwardUrl()</code>这几个配置，但是这些配置都是基于服务器渲染页面的模式，在前后端分离项目中登录只用发送携带登录信息的ajax，服务器响应结果即可，开启这些跳转配置会使ajax无法正常获取响应。  </p>
+<p>自定义处理器，登录成功响应对应的结果的Json数据,写到<code>HttpServletResponse</code>中:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> AuthenticationSuccessHandler() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAuthenticationSuccess</span><span class="params">(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        httpServletResponse.setContentType(<span class="string">&quot;application/json;charset=utf-8&quot;</span>);</span><br><span class="line">        PrintWriter out = httpServletResponse.getWriter();</span><br><span class="line">        <span class="comment">// 将结果转换成Json数据，Result是自己编写的结果类</span></span><br><span class="line">        JSONObject result = JSONObject.fromObject(<span class="keyword">new</span> Result(Result.SUCCESS, <span class="string">&quot;登录成功！&quot;</span>));</span><br><span class="line">        out.write(result.toString());</span><br><span class="line">        out.flush();</span><br><span class="line">        out.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-前端设置"><a href="#4-前端设置" class="headerlink" title="4.前端设置"></a>4.前端设置</h2><p>在跨域请求的时候，通常会自动发送两个请求。第一个请求方法为OPTION，目的是探测后端是否支持跨域，如果支持跨域再发送真实请求。这里是自动发送不用自己编写代码。  </p>
+<p>然后在发送登录请求的时候，会遇到前端ajax发送了username和password参数，但是后端收不到参数而验证失败。这里的原因是，前端ajax比如axios通常以json格式发送数据，请求头中<code>content-type</code>为<code>application/json</code>，但是springsecurity的登录不支持这种格式所以导致错误。  </p>
+<p>解决方法有两种，一是重写SpringSecurity的登录Filter，使其支持json类型数据，操作比较复杂网上有很多相关博客这里就不提了。二是在登录时前端设置数据格式为SpringSecurity支持的application/x-www-form-urlencoded，相关代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> params = <span class="keyword">new</span> URLSearchParams();</span><br><span class="line">params.append(<span class="string">&quot;username&quot;</span>, username);</span><br><span class="line">params.append(<span class="string">&quot;password&quot;</span>, password);</span><br><span class="line"><span class="built_in">this</span>.axios.post(url, params);</span><br></pre></td></tr></table></figure>
+<h2 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h2><p>至此CORS就已经开启，前端就可以愉快地使用ajax访问后端了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://marwincn.github.io/blog/2019/04/07/SpringBoot%E5%BC%80%E5%90%AF%E6%8E%A5%E5%8F%A3%E8%B7%A8%E5%9F%9F/" data-id="ckt1mcpmk0001l0nl13361me9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2020/02/05/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          使用hexo搭建博客
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2020/02/27/%E5%85%B3%E4%BA%8ERSS/">关于RSS</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/02/27/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BA%94%E5%AF%B9%E6%8C%96%E7%9F%BF%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%8F%E5%8E%86/">记一次应对挖矿程序的经历</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/02/05/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">使用hexo搭建博客</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/04/07/SpringBoot%E5%BC%80%E5%90%AF%E6%8E%A5%E5%8F%A3%E8%B7%A8%E5%9F%9F/">Spring Boot + Spring Security 应用开启接口跨域</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 marwin<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/marwincn" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
