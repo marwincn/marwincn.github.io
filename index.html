@@ -1,445 +1,131 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/products/auto-group-tabs.png" as="image"/><link rel="preload" href="/products/rouge-screen.png" as="image"/><link rel="preload" href="/products/rouge-icon.jpg" as="image"/><link rel="stylesheet" href="/_next/static/css/index.Ds2qep_I.css" /><title>Marwin · 独立开发者与产品构建者</title><meta name="description" content="Marwin 的个人产品档案：从技术实验、开源浏览器扩展到 Apple TV 应用。"/><meta property="og:title" content="把想法，做成产品。"/><meta property="og:description" content="Marwin 的个人产品档案：从技术实验、开源浏览器扩展到 Apple TV 应用。"/><meta property="og:type" content="website"/><meta property="og:locale" content="zh_CN"/><meta property="og:image" content="https://marwin.cn/og.png"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="把想法，做成产品。Marwin 产品档案"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="把想法，做成产品。"/><meta name="twitter:description" content="Marwin 的个人产品档案：从技术实验、开源浏览器扩展到 Apple TV 应用。"/><meta name="twitter:image" content="https://marwin.cn/og.png"/><link rel="icon" href="/favicon.svg"/>
+<link rel="preload" href="/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-98bbbccb.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/_next/static/_vinext_fonts/geist-mono-00e989178794/geist-mono-013b2f2f.woff2" as="font" type="font/woff2" crossorigin />
+<style data-vinext-fonts>/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-ff2310f5.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-875ccdd4.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-52306abf.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-001175b1.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-98bbbccb.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
-  
-  <title>Marwin&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Marwin&#39;s Blog">
-<meta property="og:url" content="https://marwincn.github.io/">
-<meta property="og:site_name" content="Marwin&#39;s Blog">
-<meta property="og:locale">
-<meta property="article:author" content="marwin">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/rss2.xml" title="Marwin&#39;s Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+@font-face {
+  font-family: 'Geist Fallback';
+  src: local("Arial");
+  ascent-override: 95.94%;
+  descent-override: 28.16%;
+  line-gap-override: 0.00%;
+  size-adjust: 104.76%;
+}
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1637685372295320"
-     crossorigin="anonymous"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3J7K7R3M4C"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+.__font_geist_19ysh9d { font-family: 'Geist', 'Geist Fallback'; font-style: normal; }
 
-    gtag('config', 'G-3J7K7R3M4C');
-  </script>
-  <!-- 百度统计 -->
-  <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?1eaccf6b159862b1bf42b8a5989d904d";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-    
-<meta name="generator" content="Hexo 5.4.2"></head>
+.__variable_geist_19ysh9d { --font-geist-sans: 'Geist', 'Geist Fallback'; }
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Marwin&#39;s Blog</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-          <a class="main-nav-link" target="_blank" rel="noopener" href="https://github.com/marwincn">Github</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/rss2.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://marwincn.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-GraphQL在Spring Boot项目中的实践" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/09/04/GraphQL%E5%9C%A8Spring%20Boot%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%AE%9E%E8%B7%B5/" class="article-date">
-  <time datetime="2021-09-04T16:00:00.000Z" itemprop="datePublished">2021-09-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/04/GraphQL%E5%9C%A8Spring%20Boot%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%AE%9E%E8%B7%B5/">GraphQL在Spring Boot项目中的实践</a>
-    </h1>
-  
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/_vinext_fonts/geist-mono-00e989178794/geist-mono-f6b33328.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/_vinext_fonts/geist-mono-00e989178794/geist-mono-44e03052.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* symbols2 */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/_vinext_fonts/geist-mono-00e989178794/geist-mono-0638449e.woff2) format('woff2');
+  unicode-range: U+2000-2001, U+2004-2008, U+200A, U+23B8-23BD, U+2500-259F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/_vinext_fonts/geist-mono-00e989178794/geist-mono-971fb274.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/_vinext_fonts/geist-mono-00e989178794/geist-mono-44745446.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/_vinext_fonts/geist-mono-00e989178794/geist-mono-013b2f2f.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="什么是GraphQL？"><a href="#什么是GraphQL？" class="headerlink" title="什么是GraphQL？"></a>什么是GraphQL？</h1><p>GraphQL 是一个用于 API 的查询语言，是一个使用基于类型系统来执行查询的服务端运行时（类型系统由你的数据定义）。它对标的是REST这种接口风格，它重新定义了一种接口模式，让调用方可以指定需要查询的数据，而且没有任何冗余。</p>
-        
-          <p class="article-more-link">
-            <a href="/2021/09/04/GraphQL%E5%9C%A8Spring%20Boot%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%AE%9E%E8%B7%B5/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://marwincn.github.io/2021/09/04/GraphQL%E5%9C%A8Spring%20Boot%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%AE%9E%E8%B7%B5/" data-id="cll8whafm0002g5onbs3ia3in" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+@font-face {
+  font-family: 'Geist Mono Fallback';
+  src: local("Arial");
+  ascent-override: 74.67%;
+  descent-override: 21.92%;
+  line-gap-override: 0.00%;
+  size-adjust: 134.59%;
+}
 
+.__font_geist_mono_1001rt9 { font-family: 'Geist Mono', 'Geist Mono Fallback'; font-style: normal; }
 
-  
-    <article id="post-Github Pages博客优化" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/09/02/Github%20Pages%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/" class="article-date">
-  <time datetime="2021-09-02T16:00:00.000Z" itemprop="datePublished">2021-09-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/02/Github%20Pages%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/">Github Pages 博客优化</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="使用Github-Action自动部署"><a href="#使用Github-Action自动部署" class="headerlink" title="使用Github Action自动部署"></a>使用Github Action自动部署</h1><p>Github Action是Github提供的免费CI系统，利用Git Hooks可以在提交代码时触发自动化构建流程。对于我使用hexo搭建的博客来说，在我写完博客后push到Github就能触发自动hexo deploy发布博客。</p>
-        
-          <p class="article-more-link">
-            <a href="/2021/09/02/Github%20Pages%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://marwincn.github.io/2021/09/02/Github%20Pages%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/" data-id="cll8whafi0001g5onb6vh9sma" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-使用RSS获取资讯" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/02/27/%E4%BD%BF%E7%94%A8RSS%E8%8E%B7%E5%8F%96%E8%B5%84%E8%AE%AF/" class="article-date">
-  <time datetime="2020-02-27T13:24:41.000Z" itemprop="datePublished">2020-02-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/27/%E4%BD%BF%E7%94%A8RSS%E8%8E%B7%E5%8F%96%E8%B5%84%E8%AE%AF/">使用RSS获取资讯</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、RSS是什么"><a href="#一、RSS是什么" class="headerlink" title="一、RSS是什么"></a>一、RSS是什么</h1><p>RSS是一种信息聚合的技术，都是为了提供一种更为方便、高效的互联网信息的发布和共享，用更少的时间分享更多的信息。</p>
-<p>简单来说RSS就是以统一的格式发布内容，订阅了某个RSS源的客户端可以接受到该源的更新推送。类似订阅一份报纸后，当天最新的报纸就会准时递到你手中。而由于RSS统一格式的优势，不拘于新闻，各种博客，网站更新，各种app讯息都能订阅，这种统一的概念正是吸引我的地方之一。另外一个吸引我的地方是RSS只会让你接收你想要接收的内容，沉浸式无广告阅读，不会有“猜你喜欢”擅自用AI技术推送消息给你的情况出现。</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/02/27/%E4%BD%BF%E7%94%A8RSS%E8%8E%B7%E5%8F%96%E8%B5%84%E8%AE%AF/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://marwincn.github.io/2020/02/27/%E4%BD%BF%E7%94%A8RSS%E8%8E%B7%E5%8F%96%E8%B5%84%E8%AE%AF/" data-id="cll8whafp0004g5on7nnm8x5i" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-记一次应对挖矿程序的经历" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/02/27/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BA%94%E5%AF%B9%E6%8C%96%E7%9F%BF%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%8F%E5%8E%86/" class="article-date">
-  <time datetime="2020-02-27T13:24:41.000Z" itemprop="datePublished">2020-02-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/27/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BA%94%E5%AF%B9%E6%8C%96%E7%9F%BF%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%8F%E5%8E%86/">记一次应对挖矿程序的经历</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h1><p>之前为了远程调试redis，将服务器上的redis绑定到了阿里云的公网IP上。后来上redis时发现多了两个key，查看了这两个key发现里面是curl和wget命令，于是猜到有人远程下载了脚本，但是下载的地址已经失效了，无法判断是什么脚本，但是可以肯定服务器被攻击了。后来检查服务器的资源占用，果然cpu占用间断性的会飙到100%，显然被人用来挖矿了。</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/02/27/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BA%94%E5%AF%B9%E6%8C%96%E7%9F%BF%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%8F%E5%8E%86/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://marwincn.github.io/2020/02/27/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BA%94%E5%AF%B9%E6%8C%96%E7%9F%BF%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%8F%E5%8E%86/" data-id="cll8whafr0006g5on3wki98p5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-使用hexo搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/02/05/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time datetime="2020-02-05T12:13:41.000Z" itemprop="datePublished">2020-02-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/05/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">使用hexo搭建博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h1><p>本来在自己的vps上自己写了一个博客，但是很多地方需要自己不断维护，自己写的前端也不太满意所以决定用框架搭一个静态博客部署在github page上，这样也省了在vps上到处迁移。</p>
-<p>我选择了人气比较高的Hexo，记录一下自己搭建的过程，作为官方文档的整理和补充。</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/02/05/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://marwincn.github.io/2020/02/05/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-id="cll8whafq0005g5on9ulld34y" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-SpringBoot开启接口跨域" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/07/SpringBoot%E5%BC%80%E5%90%AF%E6%8E%A5%E5%8F%A3%E8%B7%A8%E5%9F%9F/" class="article-date">
-  <time datetime="2019-04-07T03:19:33.000Z" itemprop="datePublished">2019-04-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/07/SpringBoot%E5%BC%80%E5%90%AF%E6%8E%A5%E5%8F%A3%E8%B7%A8%E5%9F%9F/">Spring Boot + Spring Security 应用开启接口跨域</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、为何要提供跨域资源服务"><a href="#一、为何要提供跨域资源服务" class="headerlink" title="一、为何要提供跨域资源服务"></a>一、为何要提供跨域资源服务</h1><p>最近在写的一个项目后端使用了Spring Boot和Spring Security，前端使用Vue和axios（发送ajax）。为了实现前后端分离，前端和后端能部署在不同的域名下，后端要开启<code>CORS（跨站资源共享）</code>，保证后端接口能被不同域名下的前端正常请求。</p>
-<blockquote>
-<p>由于浏览器的同源策略，跨域请求一般会被拒绝，导致ajax无法访问到后端资源。<br>跨域的几种场景，可以判断自己的网站是否跨域：  </p>
-<ol>
-<li>域名不同</li>
-<li>域名相同，端口不同</li>
-<li>域名相同，协议不同，如http和https  </li>
-</ol>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2019/04/07/SpringBoot%E5%BC%80%E5%90%AF%E6%8E%A5%E5%8F%A3%E8%B7%A8%E5%9F%9F/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://marwincn.github.io/2019/04/07/SpringBoot%E5%BC%80%E5%90%AF%E6%8E%A5%E5%8F%A3%E8%B7%A8%E5%9F%9F/" data-id="cll8whafo0003g5on3kgr1jv0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/09/04/GraphQL%E5%9C%A8Spring%20Boot%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%AE%9E%E8%B7%B5/">GraphQL在Spring Boot项目中的实践</a>
-          </li>
-        
-          <li>
-            <a href="/2021/09/02/Github%20Pages%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/">Github Pages 博客优化</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/27/%E4%BD%BF%E7%94%A8RSS%E8%8E%B7%E5%8F%96%E8%B5%84%E8%AE%AF/">使用RSS获取资讯</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/27/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BA%94%E5%AF%B9%E6%8C%96%E7%9F%BF%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%8F%E5%8E%86/">记一次应对挖矿程序的经历</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/05/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">使用hexo搭建博客</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2023 marwin<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-    <a target="_blank" rel="noopener" href="https://github.com/marwincn" class="mobile-nav-link">Github</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+.__variable_geist_mono_1001rt9 { --font-geist-mono: 'Geist Mono', 'Geist Mono Fallback'; }
+</style>
+</head><body class="__variable_geist_19ysh9d __variable_geist_mono_1001rt9 antialiased"><main class="min-h-screen overflow-hidden bg-background text-foreground"><nav class="mx-auto flex w-full max-w-[1440px] items-center justify-between px-6 py-7 md:px-12 lg:px-16"><a href="#top" class="group flex items-center gap-3" aria-label="返回顶部"><span class="grid size-9 place-items-center rounded-full bg-foreground text-xs font-bold text-background transition-transform group-hover:rotate-6">M</span><span class="text-sm font-semibold tracking-[-0.01em]">MARWIN / MAKER</span></a><a href="https://github.com/marwincn" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium transition-colors hover:bg-accent"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-fork size-4" aria-hidden="true"><circle cx="12" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><circle cx="18" cy="6" r="3"></circle><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"></path><path d="M12 12v3"></path></svg>GitHub</a></nav><section id="top" class="mx-auto grid w-full max-w-[1440px] gap-12 px-6 pb-20 pt-16 md:px-12 md:pb-28 md:pt-24 lg:grid-cols-[1fr_0.72fr] lg:items-end lg:px-16 lg:pt-32"><div><p class="mb-7 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground"><span class="h-px w-8 bg-primary"></span>Independent developer · Product maker</p><h1 class="max-w-5xl text-[clamp(3.4rem,8vw,8.7rem)] font-semibold leading-[0.88] tracking-[-0.075em]">把想法，<br/><span class="text-primary">做成产品。</span></h1></div><div class="max-w-xl lg:pb-3"><p class="text-lg leading-8 text-muted-foreground md:text-xl md:leading-9">从一次关于舆情与情感的技术实验，到提升浏览效率的开源扩展，再到把内容体验带上 Apple TV。我持续在不同平台上探索产品的形态。</p><a href="#products" class="mt-8 inline-flex items-center gap-3 text-sm font-semibold text-foreground">查看产品轨迹<span class="grid size-9 place-items-center rounded-full bg-primary text-primary-foreground"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down size-4" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></span></a></div></section><section class="mx-auto grid w-full max-w-[1440px] grid-cols-3 border-y border-border md:grid-cols-[1fr_1fr_1fr_2fr]"><div class="border-r border-border px-5 py-6 text-center last:border-r-0 md:px-8 md:py-8 md:text-left"><p class="text-2xl font-semibold tracking-[-0.04em] md:text-3xl">03</p><p class="mt-1 text-xs text-muted-foreground md:text-sm">产品</p></div><div class="border-r border-border px-5 py-6 text-center last:border-r-0 md:px-8 md:py-8 md:text-left"><p class="text-2xl font-semibold tracking-[-0.04em] md:text-3xl">02</p><p class="mt-1 text-xs text-muted-foreground md:text-sm">正式发布</p></div><div class="border-r border-border px-5 py-6 text-center last:border-r-0 md:px-8 md:py-8 md:text-left"><p class="text-2xl font-semibold tracking-[-0.04em] md:text-3xl">02</p><p class="mt-1 text-xs text-muted-foreground md:text-sm">开源项目</p></div><p class="hidden items-center px-10 text-sm leading-6 text-muted-foreground md:flex">Build small. Learn fast. Ship something real.</p></section><section id="products" aria-labelledby="products-title" class="pt-24 md:pt-36"><div class="mx-auto flex w-full max-w-[1440px] items-end justify-between px-6 pb-10 md:px-12 lg:px-16"><div><p class="text-xs font-bold uppercase tracking-[0.18em] text-primary">Selected work · 01—03</p><h2 id="products-title" class="mt-4 text-4xl font-semibold tracking-[-0.05em] md:text-6xl">产品轨迹</h2></div><p class="hidden text-sm text-muted-foreground md:block">按时间顺序</p></div><article class="border-t border-border bg-card"><div class="mx-auto grid w-full max-w-[1440px] gap-10 px-6 py-14 md:px-12 md:py-20 lg:grid-cols-[0.35fr_0.8fr_1.25fr] lg:px-16"><div><p class="text-3xl font-semibold tracking-[-0.04em]">01</p><p class="mt-2 text-sm text-muted-foreground">实验项目</p></div><div class="flex flex-col justify-between"><div><div class="mb-6 inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-xml size-3.5" aria-hidden="true"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>Java · NLP · Web</div><h3 class="break-words text-4xl font-semibold tracking-[-0.055em] md:text-6xl">pubsenti-finder</h3><p class="mt-7 max-w-xl text-base leading-7 text-muted-foreground md:text-lg md:leading-8">周期性获取微博热搜、热门微博与评论，通过文本分类进行情感分析，再把数据与结果呈现在 Web 页面中。这是一次把爬虫、NLP 与可视化串成完整体验的实验。</p></div><a href="https://github.com/marwincn/pubsenti-finder" target="_blank" rel="noreferrer" class="mt-9 inline-flex w-fit items-center gap-3 text-sm font-semibold underline decoration-border underline-offset-8 hover:decoration-foreground">查看开源项目 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right size-4" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></div><div class="data-grid min-h-[340px] overflow-hidden rounded-[2rem] border border-border bg-secondary p-6 md:p-9"><div class="flex items-center justify-between border-b border-border pb-5 text-xs text-muted-foreground"><span>SENTIMENT / LIVE SAMPLE</span><span class="inline-flex items-center gap-2"><i class="size-2 rounded-full bg-emerald-500"></i> ANALYZING</span></div><div class="grid h-[250px] grid-cols-12 items-end gap-2 pt-10" aria-hidden="true"><div class="group flex h-full items-end"><span class="w-full rounded-t-sm transition-all duration-300 group-hover:opacity-70 bg-primary" style="height:42%"></span></div><div class="group flex h-full items-end"><span class="w-full rounded-t-sm transition-all duration-300 group-hover:opacity-70 bg-foreground/70" style="height:68%"></span></div><div class="group flex h-full items-end"><span class="w-full rounded-t-sm transition-all duration-300 group-hover:opacity-70 bg-foreground/70" style="height:51%"></span></div><div class="group flex h-full items-end"><span class="w-full rounded-t-sm transition-all duration-300 group-hover:opacity-70 bg-primary" style="height:85%"></span></div><div class="group flex h-full items-end"><span class="w-full rounded-t-sm transition-all duration-300 group-hover:opacity-70 bg-foreground/70" style="height:61%"></span></div><div class="group flex h-full items-end"><span class="w-full rounded-t-sm transition-all duration-300 group-hover:opacity-70 bg-foreground/70" style="height:77%"></span></div><div class="group flex h-full items-end"><span class="w-full rounded-t-sm transition-all duration-300 group-hover:opacity-70 bg-primary" style="height:48%"></span></div><div class="group flex h-full items-end"><span class="w-full rounded-t-sm transition-all duration-300 group-hover:opacity-70 bg-foreground/70" style="height:92%"></span></div><div class="group flex h-full items-end"><span class="w-full rounded-t-sm transition-all duration-300 group-hover:opacity-70 bg-foreground/70" style="height:70%"></span></div><div class="group flex h-full items-end"><span class="w-full rounded-t-sm transition-all duration-300 group-hover:opacity-70 bg-primary" style="height:57%"></span></div><div class="group flex h-full items-end"><span class="w-full rounded-t-sm transition-all duration-300 group-hover:opacity-70 bg-foreground/70" style="height:81%"></span></div><div class="group flex h-full items-end"><span class="w-full rounded-t-sm transition-all duration-300 group-hover:opacity-70 bg-foreground/70" style="height:66%"></span></div></div><div class="mt-4 flex justify-between text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground"><span>Negative</span><span>Mixed</span><span>Positive</span></div></div></div></article><article class="bg-[#1d201f] text-[#f5f0e8]"><div class="mx-auto grid w-full max-w-[1440px] gap-10 px-6 py-14 md:px-12 md:py-20 lg:grid-cols-[0.35fr_0.8fr_1.25fr] lg:px-16"><div><p class="text-3xl font-semibold tracking-[-0.04em]">02</p><p class="mt-2 text-sm text-[#a9aaa5]">首个正式产品</p></div><div class="flex flex-col justify-between"><div><div class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 text-xs font-medium text-[#b9bab4]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-app-window size-3.5" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M10 4v4"></path><path d="M2 8h20"></path><path d="M6 4v4"></path></svg>Chrome extension · Open source</div><h3 class="text-4xl font-semibold tracking-[-0.055em] md:text-6xl">Auto Group Tabs</h3><p class="mt-7 max-w-xl text-base leading-7 text-[#b9bab4] md:text-lg md:leading-8">自动为新标签页分组，并允许用户按域名或标题关键词制定规则。它把 Chrome 原生的标签页分组能力，变成一种持续、自动的浏览习惯。</p></div><div class="mt-9 flex flex-wrap gap-x-7 gap-y-4 text-sm font-semibold"><a href="https://chromewebstore.google.com/detail/mnolhkkapjcaekdgopmfolekecfhgoob?utm_source=item-share-cb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 underline decoration-white/20 underline-offset-8 hover:decoration-white">Chrome 应用商店 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right size-4" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a><a href="https://github.com/marwincn/auto-group-tabs" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 underline decoration-white/20 underline-offset-8 hover:decoration-white">查看源码 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-fork size-4" aria-hidden="true"><circle cx="12" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><circle cx="18" cy="6" r="3"></circle><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"></path><path d="M12 12v3"></path></svg></a></div></div><div class="relative min-h-[360px] overflow-hidden rounded-[2rem] bg-[#f0eadf] p-7 text-[#1d201f] md:p-10"><div class="absolute inset-x-0 top-0 flex h-14 items-center gap-2 border-b border-black/10 px-6" aria-hidden="true"><span class="size-2.5 rounded-full bg-[#ef6d55]"></span><span class="size-2.5 rounded-full bg-[#e7b649]"></span><span class="size-2.5 rounded-full bg-[#5eaf74]"></span></div><div class="grid h-full place-items-center pt-12"><div class="w-full max-w-md"><img src="/products/auto-group-tabs.png" alt="Auto Group Tabs 图标" width="167" height="167" class="mx-auto size-24 rounded-[1.35rem] shadow-[0_20px_50px_rgb(0_0_0/18%)] md:size-32"/><div class="mt-10 flex items-end justify-center gap-2" aria-label="浏览器标签页分组示意"><div class="w-[29%] rounded-t-xl px-3 py-3 text-center text-xs font-semibold text-white md:py-4" style="background-color:#dd6b4d">Work</div><div class="w-[22%] rounded-t-xl px-3 py-3 text-center text-xs font-semibold text-white md:py-4" style="background-color:#679975">Read</div><div class="w-[34%] rounded-t-xl px-3 py-3 text-center text-xs font-semibold text-white md:py-4" style="background-color:#4f78a7">Build</div></div><div class="h-16 rounded-b-2xl rounded-tr-2xl bg-white shadow-sm"></div></div></div></div></div></article><article class="bg-[#d95d3f] text-[#fff9ef]"><div class="mx-auto grid w-full max-w-[1440px] gap-10 px-6 py-14 md:px-12 md:py-20 lg:grid-cols-[0.35fr_0.8fr_1.25fr] lg:px-16"><div><p class="text-3xl font-semibold tracking-[-0.04em]">03</p><p class="mt-2 text-sm text-white/70">最近发布</p></div><div class="flex flex-col justify-between"><div><div class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 px-3 py-1.5 text-xs font-medium text-white/75"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tv size-3.5" aria-hidden="true"><path d="m17 2-5 5-5-5"></path><rect width="20" height="15" x="2" y="7" rx="2"></rect></svg>Apple TV · App Store</div><h3 class="text-5xl font-semibold tracking-[-0.065em] md:text-7xl">Rouge</h3><p class="mt-7 max-w-xl text-base leading-7 text-white/75 md:text-lg md:leading-8">专为 Apple TV 打造的内容浏览应用。针对电视观看距离、焦点操作与遥控器优化，让图片、视频与沉浸式内容从手机自然延伸到客厅大屏。</p></div><div class="mt-9 flex items-center gap-5"><a href="https://apps.apple.com/us/app/rouge/id6799992309" target="_blank" rel="noreferrer" aria-label="在 App Store 查看 Rouge" class="grid size-12 shrink-0 place-items-center rounded-full border border-current/20 transition-transform duration-300 hover:rotate-45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right size-5" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a><a href="https://apps.apple.com/us/app/rouge/id6799992309" target="_blank" rel="noreferrer" class="text-sm font-semibold">在 App Store 查看</a></div></div><div class="relative overflow-hidden rounded-[2rem] bg-[#151616] p-3 shadow-[0_30px_80px_rgb(88_20_8/30%)] md:p-5"><img src="/products/rouge-screen.png" alt="Rouge 在 Apple TV 上的内容浏览界面" width="1440" height="810" class="aspect-video w-full rounded-[1.35rem] object-cover"/><div class="absolute bottom-6 left-6 flex items-center gap-3 rounded-2xl bg-black/70 p-2 pr-4 text-white backdrop-blur-md md:bottom-10 md:left-10"><img src="/products/rouge-icon.jpg" alt="" width="512" height="307" class="h-10 w-[4.2rem] rounded-xl object-cover md:h-12 md:w-20"/><div><p class="text-sm font-semibold">Rouge</p><p class="text-[10px] text-white/60">Only for Apple TV</p></div></div></div></div></article></section><footer class="bg-[#111312] text-[#f5f0e8]"><div class="mx-auto grid w-full max-w-[1440px] gap-12 px-6 py-20 md:px-12 md:py-28 lg:grid-cols-[1fr_0.55fr] lg:items-end lg:px-16"><div><p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#9c9f99]">Keep making</p><p class="mt-5 max-w-4xl text-4xl font-semibold leading-[1.05] tracking-[-0.055em] md:text-7xl">下一个产品，<br/>从一个真实问题开始。</p></div><div class="flex items-end justify-between border-t border-white/15 pt-6 lg:border-t-0 lg:pt-0"><div><p class="text-sm font-semibold">Marwin</p><p class="mt-1 text-xs text-[#8e928c]">Independent developer</p></div><a href="https://github.com/marwincn" target="_blank" rel="noreferrer" aria-label="访问 Marwin 的 GitHub" class="grid size-12 place-items-center rounded-full border border-white/20 transition-colors hover:bg-white hover:text-black"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right size-5" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></div></div></footer></main></body></html>
