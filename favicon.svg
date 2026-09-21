@@ -1,4 +1,12 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="64" height="64" rx="32" fill="#D95D3F"/>
-  <path d="M16 45V19H23.2L32 33.4L40.8 19H48V45H40.8V30.7L34.6 40.6H29.4L23.2 30.7V45H16Z" fill="#FFF9EF"/>
+  <defs>
+    <linearGradient id="brand" x1="9" y1="7" x2="55" y2="57" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B62FF"/>
+      <stop offset="1" stop-color="#6D8DFF"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="17" fill="#070B14" stroke="#587BFF" stroke-opacity="0.55" stroke-width="2"/>
+  <rect x="7" y="7" width="50" height="50" rx="13" fill="url(#brand)"/>
+  <path d="M16 45V19H23.2L32 33.4L40.8 19H48V45H40.8V30.7L34.6 40.6H29.4L23.2 30.7V45H16Z" fill="#F4F7FF"/>
+  <circle cx="49" cy="15" r="2.5" fill="#DCE5FF"/>
 </svg>
