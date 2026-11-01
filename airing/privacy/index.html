@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy · Airing - Media Tracker</title>
+  <meta name="description" content="Privacy policy for Airing - Media Tracker, an iOS app for tracking TV shows, movies, and anime.">
+  <link rel="canonical" href="https://marwincn.github.io/airing/privacy/">
+  <meta name="theme-color" content="#070b14">
+  <meta property="og:title" content="Airing Privacy Policy">
+  <meta property="og:description" content="How Airing - Media Tracker handles information on your device, metadata lookups, and support email.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://marwincn.github.io/airing/privacy/">
+  <link rel="icon" href="/favicon.svg">
+  <style>
+    :root {
+      --bg: #070b14;
+      --fg: #f4f7ff;
+      --card: #0c1322;
+      --primary: #4f7cff;
+      --primary-2: #8eabff;
+      --muted: #96a0b8;
+      --text: #d7deee;
+      --border: rgba(155, 174, 220, 0.18);
+      --max: 42rem;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--fg);
+      background:
+        radial-gradient(880px 420px at 8% -12%, rgba(79, 124, 255, 0.2), transparent 62%),
+        radial-gradient(640px 360px at 100% 0%, rgba(109, 141, 255, 0.12), transparent 58%),
+        var(--bg);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-size: 1.02rem;
+      line-height: 1.65;
+      color-scheme: dark;
+    }
+    a { color: var(--primary-2); text-underline-offset: 0.18em; }
+    a:hover { color: #e7eeff; }
+    a:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+    .wrap { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 1.35rem 0 0.25rem;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: inherit;
+      text-decoration: none;
+      font-weight: 650;
+      letter-spacing: 0.08em;
+      font-size: 0.92rem;
+    }
+    .mark {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 0.6rem;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #2b62ff, #6d8dff);
+      color: #f4f7ff;
+      font-weight: 700;
+      letter-spacing: 0;
+      box-shadow: 0 0 0 1px rgba(88, 123, 255, 0.5);
+    }
+    nav { display: flex; gap: 0.35rem; }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+    }
+    nav a[aria-current="page"] {
+      color: var(--fg);
+      background: rgba(79, 124, 255, 0.14);
+    }
+    h1 {
+      font-size: clamp(2.05rem, 6vw, 2.85rem);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      margin: 1.4rem 0 0.75rem;
+    }
+    .lede { color: var(--text); margin: 0 0 0.4rem; font-size: 1.06rem; }
+    .meta { color: var(--muted); margin: 0 0 1.5rem; font-size: 0.92rem; }
+    .kicker {
+      margin: 1.6rem 0 0;
+      color: var(--primary-2);
+      font-size: 0.75rem;
+      font-weight: 650;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    article h2 {
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.4rem;
+    }
+    article section {
+      background: rgba(12, 19, 34, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 1.15rem;
+      padding: 1.1rem 1.2rem 1.15rem;
+      margin: 0 0 0.75rem;
+    }
+    article p { margin: 0; color: var(--text); }
+    article p + p { margin-top: 0.7rem; }
+    .email {
+      display: inline-flex;
+      margin-top: 0.85rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      background: #111a2c;
+      border: 1px solid var(--border);
+      color: var(--fg);
+      font-weight: 650;
+      text-decoration: none;
+    }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem 1.25rem;
+      flex-wrap: wrap;
+      margin: 2.2rem 0 2.2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="/airing/">
+        <span class="mark" aria-hidden="true">A</span>
+        AIRING
+      </a>
+      <nav aria-label="Airing">
+        <a href="/airing/">Support</a>
+        <a href="/airing/privacy/" aria-current="page">Privacy</a>
+      </nav>
+    </header>
+
+    <main>
+      <p class="kicker">Privacy</p>
+      <h1>Privacy Policy</h1>
+      <p class="lede"><strong>Airing - Media Tracker</strong> is an iOS app for tracking TV shows, movies, and anime. This page explains what information the app and its developer handle. It is the privacy policy for the App Store listing.</p>
+      <p class="meta">Last updated: November 1, 2026 · App Store Connect App ID 6829372334</p>
+
+      <article>
+        <section>
+          <h2>Library data stays on your device</h2>
+          <p>Titles you save, progress you mark, and similar tracking choices stay on your device. Airing does not ask you to create an account or sign in, and we do not receive a copy of your library.</p>
+          <p>If you back up your iPhone or iPad with Apple, that backup can include the app’s on-device data. Apple controls device backups. Their privacy policy covers that data, not this one.</p>
+        </section>
+
+        <section>
+          <h2>Email you send us</h2>
+          <p>If you write to <a href="mailto:marwincode@gmail.com">marwincode@gmail.com</a>, we receive your email address, your message, and anything you choose to include — for example a device model, iOS version, Airing version, or screenshots. We use that only to reply and to look into the issue you reported. We do not use support email for advertising.</p>
+          <p>You can ask us to delete those messages. We keep them only as long as we need them to handle your request.</p>
+        </section>
+
+        <section>
+          <h2>Third-party metadata</h2>
+          <p>To show names, air dates, artwork, and ratings, the app requests catalog information from third-party metadata providers. Those requests are about the title you look up. A provider may also see ordinary connection details, such as an IP address. We do not send them your library, and we do not sell this traffic. Each provider’s own policy applies to data on their systems.</p>
+        </section>
+
+        <section>
+          <h2>Analytics</h2>
+          <p>Airing does not include its own analytics or advertising SDK. The app may be covered by Apple’s standard App Store analytics and diagnostics, depending on your iOS settings (including “Share with App Developers”). You can change those settings on your device. We do not use that channel to sell personal information.</p>
+        </section>
+
+        <section>
+          <h2>Purchases</h2>
+          <p>Apple handles App Store downloads and any payments. We do not receive your payment card number.</p>
+        </section>
+
+        <section>
+          <h2>No sale of personal data</h2>
+          <p>We do not sell personal data. We do not share it with advertisers or data brokers. The only sharing described above is metadata lookups made so the app can show titles, Apple’s own platform services, email you send us, and disclosures required by law.</p>
+        </section>
+
+        <section>
+          <h2>Children</h2>
+          <p>Airing is a general-audience media tracker. It is not directed at children under 13, and we do not knowingly collect personal information from children.</p>
+        </section>
+
+        <section>
+          <h2>Privacy requests and deletion</h2>
+          <p>Deleting Airing from your device removes its local library from that device. For questions about this policy, a copy of information we hold from your emails, or deletion of those messages, contact <a href="mailto:marwincode@gmail.com">marwincode@gmail.com</a>. If the request relates to an Apple purchase, write from the email address tied to that Apple ID. We usually reply within 1–2 business days.</p>
+          <a class="email" href="mailto:marwincode@gmail.com">marwincode@gmail.com</a>
+        </section>
+
+        <section>
+          <h2>Changes</h2>
+          <p>If this policy changes, we will update this page and the date at the top.</p>
+        </section>
+
+        <section>
+          <h2>Contact</h2>
+          <p>Marwin<br>Email: <a href="mailto:marwincode@gmail.com">marwincode@gmail.com</a></p>
+          <p>More help is on the <a href="/airing/">support page</a>.</p>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <span>Airing - Media Tracker · App Store Connect App ID 6829372334</span>
+      <a href="https://marwincn.github.io/">Marwin</a>
+    </footer>
+  </div>
+</body>
+</html>

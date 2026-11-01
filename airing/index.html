@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Airing Support · Airing - Media Tracker</title>
+  <meta name="description" content="Support and FAQ for Airing - Media Tracker, an iOS app for tracking TV shows, movies, and anime on one calendar.">
+  <link rel="canonical" href="https://marwincn.github.io/airing/">
+  <meta name="theme-color" content="#070b14">
+  <meta property="og:title" content="Airing Support">
+  <meta property="og:description" content="FAQ and contact for Airing - Media Tracker.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://marwincn.github.io/airing/">
+  <link rel="icon" href="/favicon.svg">
+  <style>
+    :root {
+      --bg: #070b14;
+      --fg: #f4f7ff;
+      --card: #0c1322;
+      --primary: #4f7cff;
+      --primary-2: #8eabff;
+      --muted: #96a0b8;
+      --text: #d7deee;
+      --border: rgba(155, 174, 220, 0.18);
+      --max: 42rem;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--fg);
+      background:
+        radial-gradient(880px 420px at 8% -12%, rgba(79, 124, 255, 0.2), transparent 62%),
+        radial-gradient(640px 360px at 100% 0%, rgba(109, 141, 255, 0.12), transparent 58%),
+        var(--bg);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-size: 1.02rem;
+      line-height: 1.65;
+      color-scheme: dark;
+    }
+    a { color: var(--primary-2); text-underline-offset: 0.18em; }
+    a:hover { color: #e7eeff; }
+    a:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+    .wrap { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 1.35rem 0 0.25rem;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: inherit;
+      text-decoration: none;
+      font-weight: 650;
+      letter-spacing: 0.08em;
+      font-size: 0.92rem;
+    }
+    .mark {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 0.6rem;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #2b62ff, #6d8dff);
+      color: #f4f7ff;
+      font-weight: 700;
+      letter-spacing: 0;
+      box-shadow: 0 0 0 1px rgba(88, 123, 255, 0.5);
+    }
+    nav { display: flex; gap: 0.35rem; }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+    }
+    nav a[aria-current="page"] {
+      color: var(--fg);
+      background: rgba(79, 124, 255, 0.14);
+    }
+    h1 {
+      font-size: clamp(2.05rem, 6vw, 2.85rem);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      margin: 1.4rem 0 0.75rem;
+    }
+    .lede { color: var(--text); margin: 0 0 1.4rem; font-size: 1.06rem; }
+    .kicker {
+      margin: 1.6rem 0 0;
+      color: var(--primary-2);
+      font-size: 0.75rem;
+      font-weight: 650;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .panel {
+      background: rgba(12, 19, 34, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 1.15rem;
+      padding: 1.15rem 1.2rem 1.25rem;
+    }
+    .panel p { margin: 0.35rem 0 0; color: var(--text); }
+    .email {
+      display: inline-flex;
+      margin-top: 0.85rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      background: #111a2c;
+      border: 1px solid var(--border);
+      color: var(--fg);
+      font-weight: 650;
+      text-decoration: none;
+    }
+    h2 {
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+      margin: 2.1rem 0 0.85rem;
+    }
+    .faq { display: grid; gap: 0.75rem; }
+    .faq article h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+    .faq p, .faq li { color: var(--text); }
+    .faq p { margin: 0; }
+    .faq ul { margin: 0.35rem 0 0; padding-left: 1.15rem; }
+    .faq li + li { margin-top: 0.28rem; }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem 1.25rem;
+      flex-wrap: wrap;
+      margin: 2.4rem 0 2.2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="/airing/">
+        <span class="mark" aria-hidden="true">A</span>
+        AIRING
+      </a>
+      <nav aria-label="Airing">
+        <a href="/airing/" aria-current="page">Support</a>
+        <a href="/airing/privacy/">Privacy</a>
+      </nav>
+    </header>
+
+    <main>
+      <p class="kicker">Support</p>
+      <h1>Airing Support</h1>
+      <p class="lede"><strong>Airing - Media Tracker</strong> helps you track TV shows, movies, and anime on one calendar — month, week, or timeline — so you always know what’s airing next.</p>
+
+      <section class="panel" aria-labelledby="contact-title">
+        <h2 id="contact-title" class="kicker" style="margin:0">Contact</h2>
+        <p>Email: <a href="mailto:marwincode@gmail.com">marwincode@gmail.com</a></p>
+        <p>We usually reply within 1–2 business days.</p>
+        <p>For data deletion and privacy requests, see the <a href="/airing/privacy/">privacy policy</a>.</p>
+        <a class="email" href="mailto:marwincode@gmail.com">marwincode@gmail.com</a>
+      </section>
+
+      <h2>FAQ</h2>
+      <div class="faq">
+        <article class="panel">
+          <h3>What is Airing?</h3>
+          <p>Airing is a media tracker for TV, movies, and anime. See what’s airing on a calendar, continue watching from where you left off, compare ratings from multiple sources, browse seasonal anime, and keep everything in your library.</p>
+        </article>
+        <article class="panel">
+          <h3>How do I track a show or movie?</h3>
+          <p>Search for a title, add it to your library, and mark your progress. Upcoming episodes and releases show up on your calendar.</p>
+        </article>
+        <article class="panel">
+          <h3>What do the calendar views do?</h3>
+          <ul>
+            <li><strong>Month</strong> — overview of the whole month</li>
+            <li><strong>Week</strong> — denser weekly schedule</li>
+            <li><strong>Timeline</strong> — chronological feed of what’s coming up</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3>Why don’t times match my local schedule?</h3>
+          <p>Airing uses release/air times from metadata providers. Set your device timezone correctly; if a title still looks wrong, email us the title and what you expected.</p>
+        </article>
+        <article class="panel">
+          <h3>Can I import lists from other apps?</h3>
+          <p>Import support is on our roadmap. Email us which service you use (e.g. Trakt, MyAnimeList) so we can prioritize.</p>
+        </article>
+        <article class="panel">
+          <h3>The app language looks wrong</h3>
+          <p>The App Store listing and default UI are English. If you still see mixed languages, tell us your device language and iOS version.</p>
+        </article>
+        <article class="panel">
+          <h3>How do I delete my data / request privacy info?</h3>
+          <p>Email us from the address tied to your Apple ID purchases or the email you used with us. We’ll help with data deletion and privacy requests. Details are in the <a href="/airing/privacy/">privacy policy</a>.</p>
+        </article>
+        <article class="panel">
+          <h3>Something is broken or a title is missing</h3>
+          <p>Please include: device model, iOS version, Airing version, and screenshots if possible. For missing titles, send the official name and year.</p>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <span>Airing - Media Tracker · App Store Connect App ID 6829372334</span>
+      <a href="https://marwincn.github.io/">Marwin</a>
+    </footer>
+  </div>
+</body>
+</html>
